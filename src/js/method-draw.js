@@ -5,7 +5,7 @@ window.methodDraw = function() {
     canvas_expansion: 1, 
     dimensions: [800,600], 
     initFill: {color: 'fff', opacity: 1},
-    initStroke: {width: 1.5, color: '000', opacity: 1},
+    initStroke: {width: 3.5, color: '000', opacity: 1},
     initOpacity: 1,
     imgPath: 'images/',
     extPath: 'extensions/',
@@ -736,7 +736,7 @@ window.methodDraw = function() {
         });
       }
     }
-    
+
     // by default, svgCanvas.open() is a no-op.
     // it is up to an extension mechanism (opera widget, etc) 
     // to call setCustomHandlers() which will make it do something

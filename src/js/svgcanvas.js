@@ -45,9 +45,9 @@ var svgns = "http://www.w3.org/2000/svg",
 var curConfig = {
   show_outside_canvas: true,
   selectNew: true,
-  dimensions: [800, 600],
+  dimensions: [600, 300],
   initFill: {color: 'fff', opacity: 1},
-  initStroke: {width: 1, color: '000', opacity: 1},
+  initStroke: {width: 3.5, color: '000', opacity: 1},
   imgPath: 'images/',
   baseUnit: 'px',
   defaultFont: "Noto Sans JP"
@@ -146,7 +146,7 @@ all_properties.text = $.extend(true, {}, all_properties.shape);
 $.extend(all_properties.text, {
   fill: "#000000",
   stroke_width: 0,
-  font_size: 24,
+  font_size: 38,
   font_family: curConfig.defaultFont
 });
 

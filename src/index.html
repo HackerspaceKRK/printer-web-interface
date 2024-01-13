@@ -129,6 +129,12 @@
         <div class="menu_item" id="tool_source" data-action="source">Source... <span class="shortcut">⌘U</span></div>
     </div>
   </div>
+
+
+  <div class="menu menu_item" style="background: pink; color: black; border-radius: 4px;" id="tool_print" data-action="export2">
+    <div class="menu_title" style="color: black; font-weight: bold;">PRINT ON PRINTER</div>
+
+    </div>
   <div class="menu-right">
   <button class="menu-icon" id="darkmode-button">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M17.66 7.93L12 2.27 6.34 7.93c-3.12 3.12-3.12 8.19 0 11.31C7.9 20.8 9.95 21.58 12 21.58c2.05 0 4.1-.78 5.66-2.34 3.12-3.12 3.12-8.19 0-11.31zM12 19.59c-1.6 0-3.11-.62-4.24-1.76C6.62 16.69 6 15.19 6 13.59s.62-3.11 1.76-4.24L12 5.1v14.49z"></path></svg>
@@ -152,12 +158,12 @@
 
 
       <label data-title="Change canvas width" class="draginput">
-        <input id="canvas_width" type="text" pattern="[0-9]*" value="800" />
+        <input id="canvas_width" type="text" pattern="[0-9]*" value="600" />
         <span class="icon_label">Width</span>
       </label>
 
       <label data-title="Change canvas height" class="draginput">
-        <input id="canvas_height" type="text" pattern="[0-9]*" value="600" />
+        <input id="canvas_height" type="text" pattern="[0-9]*" value="300" />
         <span class="icon_label">Height</span>
       </label>
       
@@ -662,6 +668,13 @@
   <div class="tool_button" id="tool_eyedropper" data-mode="eyedropper" title="Eyedropper Tool [E]">
     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="2 2 20 20" width="27" style="transform: scale(-1, 1)"><path d="M20.71 5.63l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-3.12 3.12-1.93-1.91-1.41 1.41 1.42 1.42L3 16.25V21h4.75l8.92-8.92 1.42 1.42 1.41-1.41-1.92-1.92 3.12-3.12c.4-.4.4-1.03.01-1.42zM6.92 19L5 17.08l8.06-8.06 1.92 1.92L6.92 19z"/></svg>
   </div>
+
+  <div class="tool_button" id="tool_qr" data-mode="qr" title="QR Code">
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-qr-code"><rect width="5" height="5" x="3" y="3" rx="1"/><rect width="5" height="5" x="16" y="3" rx="1"/><rect width="5" height="5" x="3" y="16" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/><path d="M21 21v.01"/><path d="M12 7v3a2 2 0 0 1-2 2H7"/><path d="M3 12h.01"/><path d="M12 3h.01"/><path d="M12 16v.01"/><path d="M16 12h1"/><path d="M21 12v.01"/><path d="M12 21v-1"/></svg>
+  </div>
+  
   
   <div id="color_tools">
         <div id="tool_switch" title="Switch stroke and fill colors [X]">
@@ -749,6 +762,7 @@
   <script type="text/javascript" src="js/loading.js"></script>
   <!-- endbuild -->
   <!-- build:js all.js -->
+  <script type="text/javascript" src="js/lib/qrcode.min.js"></script>
   <script type="text/javascript" src="js/lib/jquery-3.5.1.min.js"></script>
   <script type="text/javascript" src="js/lib/pathseg.js"></script>
   <script type="text/javascript" src="js/lib/jquery.hotkeys.min.js"></script>

@@ -268,6 +268,8 @@ MD.Editor = function(){
   }
 
   function exportHandler(window, data) {
+
+  
     var issues = data.issues;
     
     if(!$('#export_canvas').length) {
@@ -280,6 +282,18 @@ MD.Editor = function(){
     canvg(c, data.svg, {renderCallback: function() {
       var datauri = c.toDataURL('image/png');  
       if (!datauri) return false;
+      if (window._send_to_server ){
+        fetch('/print', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({png: datauri})
+        }).then(r => r.text()).then(r => {
+          alert(r);
+        });
+        return; 
+      }
       var filename = "Method Draw Image";
       var type = 'image/png';
       var file = svgedit.utilities.dataURItoBlob(datauri, type);
@@ -299,6 +313,7 @@ MD.Editor = function(){
       }
     }});
   };
+
 
   function saveCanvas(){
     state.set("canvasContent", svgCanvas.getSvgString());
@@ -419,4 +434,18 @@ MD.Editor = function(){
           });
         });
       }}
+
+
+      this.export2 = function(){ 
+        if(!confirm("Do you want to print?")) return;
+        window._send_to_server = true;
+        if(window.canvg) {
+            svgCanvas.rasterExport();
+          } else {
+            $.getScript('js/lib/rgbcolor.js', function() {
+              $.getScript('js/lib/canvg.js', function() {
+                svgCanvas.rasterExport();
+              });
+            });
+          }}
 }
