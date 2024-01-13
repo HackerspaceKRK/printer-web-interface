@@ -1,5 +1,8 @@
 # Hackerspace printer web interface
 
+<img width="1439" alt="image" src="https://github.com/HackerspaceKRK/printer-web-interface/assets/5400940/c5b6aa01-7be0-4d51-888d-a69db6104439">
+
+
 This is a modified version of the "Method Draw" editor, which adds a simple Go backend to allow printing the edited image on a label printer using the `lp` command. A button in the editor sends a PNG to the backend, which then prints it. Additionally an option to add a QR code to the image is added.
 
 ## Building
