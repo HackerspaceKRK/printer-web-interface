@@ -1,4 +1,20 @@
-# Method Draw
+# Hackerspace printer web interface
+
+This is a modified version of the "Method Draw" editor, which adds a simple Go backend to allow printing the edited image on a label printer using the `lp` command. A button in the editor sends a PNG to the backend, which then prints it. Additionally an option to add a QR code to the image is added.
+
+## Building
+
+```bash
+GOOS=linux GOARCH=amd64 go build -o webinterface
+```
+
+## Deploying 
+
+```bash
+rsync ./webinterface hskrk@10.12.10.123:./ --progress
+```
+
+# Method Draw [ORIGINAL README]
 
 Method Draw is a web based vector drawing application. The purpose of Method Draw is to provide a simple and easy-to-use SVG editor experience. It purposely removes some features such as layers and line-caps/corners in exchange for a more simple and pleasant experience. If you are looking for a more complete vector editing open-source solution, please check out [SVG Edit](https://github.com/SVG-Edit/svgedit).
 
