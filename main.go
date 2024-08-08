@@ -77,7 +77,7 @@ func printHandler(w http.ResponseWriter, r *http.Request) {
 	log.Println("File saved to", tempFile.Name())
 
 	// Execute the lp command
-	printCommand := exec.Command("lp", "-d", "CITIZEN_CL-S700Z", tempFile.Name())
+	printCommand := exec.Command("lp", "-d", "Zebra", tempFile.Name())
 	err = printCommand.Run()
 	if err != nil {
 		log.Println(printCommand.Stderr)

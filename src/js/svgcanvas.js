@@ -45,7 +45,7 @@ var svgns = "http://www.w3.org/2000/svg",
 var curConfig = {
   show_outside_canvas: true,
   selectNew: true,
-  dimensions: [600, 300],
+  dimensions: [800, 400],
   initFill: {color: 'fff', opacity: 1},
   initStroke: {width: 3.5, color: '000', opacity: 1},
   imgPath: 'images/',

@@ -24,7 +24,7 @@ const dao = [
     name: "canvasSize",
     label: "Canvas Size",
     type: "array",
-    default: [600, 300],
+    default: [800, 400],
     private: false,
     save: true
   },
