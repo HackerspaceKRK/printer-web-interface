@@ -1,0 +1,30 @@
+name: Build and Upload Go Binary
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.21' # Specify your Go version
+
+      - name: Build the Go binary
+        run: |
+          GOOS=linux GOARCH=amd64 go build -o webinterface
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: webinterface
+          path: webinterface
